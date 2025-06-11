@@ -103,13 +103,11 @@ pydantic_core==2.23.4
 Pygments==2.18.0
 pyparsing==3.1.2
 pyphen==0.16.0
-pypiwin32==223
 pyserial==3.5
 python-dateutil==2.9.0.post0
 python-docx==1.1.2
 python-dotenv==1.0.1
 pytz==2024.1
-pywin32==307
 PyYAML==6.0.2
 qrcode==8.1
 regex==2024.9.11
