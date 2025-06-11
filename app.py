@@ -74,4 +74,4 @@ def clear_history():
     return redirect(url_for('home'))
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=False)
