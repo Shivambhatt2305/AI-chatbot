@@ -20,7 +20,7 @@ except Exception as e:
     print(f"Error initializing model: {str(e)}")
     model = None
 
-# Store chat history in memory
+# Store chat history in memory (consider session-based storage for production)
 chat_history = []
 
 @app.route('/', methods=['GET', 'POST'])
@@ -50,9 +50,9 @@ def home():
                     if chunk.text:
                         response_text += chunk.text
                 
-                response = response_text
+                response = response_text.strip()
 
-                # Add to chat history
+                # Add to chat history only after generating response
                 if response:
                     chat_history.append({
                         'question': user_input,
@@ -64,8 +64,6 @@ def home():
                 response = f"Error generating response: {str(e)}"
     
     return render_template('index.html', 
-                         response=response, 
-                         user_input=user_input, 
                          chat_history=chat_history)
 
 @app.route('/clear_history', methods=['POST'])
@@ -73,5 +71,5 @@ def clear_history():
     chat_history.clear()
     return redirect(url_for('home'))
 
-if __name__ == '_main_':
+if __name__ == '__main__':
     app.run(debug=True)
