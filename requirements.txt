@@ -152,7 +152,6 @@ wcwidth==0.2.13
 weasel==0.4.1
 Werkzeug==3.0.4
 wheel==0.45.1
-wrap Ari==0.4
 wrapt==1.16.0
 xgboost==2.1.2
 xyzservices==2024.9.0
