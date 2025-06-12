@@ -44,7 +44,7 @@ google-api-core==2.25.0
 google-api-python-client==2.171.0
 google-auth==2.40.0
 google-auth-httplib2==0.2.0
-google-generativeai==0.8.2
+google-generativeai==0.8.3
 google-pasta==0.2.0
 googleapis-common-protos==1.70.0
 grpcio==1.73.0
@@ -72,7 +72,7 @@ marisa-trie==1.2.1
 markdown==3.5
 markdown-it-py==3.0.0
 MarkupSafe==2.1.5
-matplotlib==3.9.1.post1
+matplotlib3.9.1.post1
 mdurl==0.1.2
 ml-dtypes==0.4.1
 multidict==6.1.0
@@ -152,6 +152,10 @@ wcwidth==0.2.13
 weasel==0.4.1
 Werkzeug==3.0.4
 wheel==0.45.1
+wrapt==1.16.0
+xgboost==2.1.2
+xyzservices==2024.9.0
+yarl==1.17.1
 wrapt==1.16.0
 xgboost==2.1.2
 xyzservices==2024.9.0
