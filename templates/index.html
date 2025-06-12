@@ -50,9 +50,9 @@
         }
 
         .container {
-            max-width: 95%;
+            max-width: 900px;
             margin: 0 auto;
-            padding: clamp(0.5rem, 2vw, 1rem);
+            padding: 20px;
             width: 100%;
             flex-grow: 1;
             display: flex;
@@ -63,29 +63,26 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: clamp(0.5rem, 2vw, 1rem) 0;
-            flex-wrap: wrap;
-            gap: 0.5rem;
+            padding: 20px 0;
         }
 
         .app-title {
             display: flex;
             align-items: center;
-            gap: clamp(0.25rem, 1vw, 0.5rem);
-            font-size: clamp(1.25rem, 4vw, 1.75rem);
+            gap: 10px;
+            font-size: 24px;
             font-weight: 700;
             color: var(--primary-color);
         }
 
         .app-title i {
-            font-size: clamp(1.5rem, 5vw, 2rem);
+            font-size: 28px;
         }
 
         .header-controls {
             display: flex;
-            gap: clamp(0.25rem, 1vw, 0.5rem);
+            gap: 10px;
             align-items: center;
-            flex-wrap: wrap;
         }
 
         .clear-history-btn {
@@ -93,14 +90,11 @@
             color: white;
             border: none;
             border-radius: 6px;
-            padding: clamp(0.4rem, 1.5vw, 0.6rem) clamp(0.6rem, 2vw, 0.9rem);
+            padding: 8px 12px;
             cursor: pointer;
-            font-size: clamp(0.7rem, 2.5vw, 0.85rem);
+            font-size: 12px;
             transition: var(--transition);
             text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 0.25rem;
         }
 
         .clear-history-btn:hover {
@@ -112,8 +106,8 @@
             color: white;
             border: none;
             border-radius: 50%;
-            width: clamp(2rem, 6vw, 2.5rem);
-            height: clamp(2rem, 6vw, 2.5rem);
+            width: 40px;
+            height: 40px;
             cursor: pointer;
             display: flex;
             align-items: center;
@@ -127,7 +121,7 @@
 
         .chat-container {
             background-color: var(--bg-color);
-            border-radius: clamp(0.5rem, 2vw, 1rem);
+            border-radius: 16px;
             box-shadow: var(--shadow);
             overflow: hidden;
             display: flex;
@@ -136,15 +130,15 @@
         }
 
         .chat-messages {
-            padding: clamp(0.5rem, 2vw, 1rem);
+            padding: 20px;
             overflow-y: auto;
             flex-grow: 1;
-            max-height: calc(100vh - 200px);
+            max-height: 600px;
         }
 
         .conversation-group {
-            margin-bottom: clamp(1rem, 3vw, 1.5rem);
-            padding-bottom: clamp(0.5rem, 2vw, 1rem);
+            margin-bottom: 30px;
+            padding-bottom: 20px;
             border-bottom: 1px solid rgba(0, 0, 0, 0.1);
         }
 
@@ -154,10 +148,10 @@
         }
 
         .message {
-            margin-bottom: clamp(0.5rem, 2vw, 1rem);
+            margin-bottom: 16px;
             display: flex;
             flex-direction: column;
-            max-width: clamp(80%, 90vw, 90%);
+            max-width: 80%;
         }
 
         .message.user {
@@ -172,13 +166,11 @@
         }
 
         .message-bubble {
-            padding: clamp(0.5rem, 2vw, 0.75rem) clamp(0.75rem, 2.5vw, 1rem);
-            border-radius: clamp(0.75rem, 3vw, 1rem);
-            margin-bottom: 0.25rem;
+            padding: 12px 16px;
+            border-radius: 18px;
+            margin-bottom: 5px;
             animation: fadeIn 0.3s ease;
             line-height: 1.5;
-            font-size: clamp(0.75rem, 2.5vw, 0.9375rem);
-            word-break: break-word;
         }
 
         .user .message-bubble {
@@ -194,17 +186,17 @@
         }
 
         .message-info {
-            font-size: clamp(0.625rem, 2vw, 0.75rem);
+            font-size: 12px;
             color: #888;
-            margin-bottom: 0.25rem;
+            margin-bottom: 4px;
         }
 
         .solution-container {
             background-color: var(--solution-bg);
             border: 2px solid var(--solution-border);
-            border-radius: clamp(0.5rem, 2vw, 0.75rem);
-            padding: clamp(0.5rem, 2vw, 1rem);
-            margin: clamp(0.5rem, 2vw, 1rem) 0;
+            border-radius: 12px;
+            padding: 24px;
+            margin: 20px 0;
             position: relative;
             animation: slideIn 0.5s ease;
         }
@@ -213,24 +205,22 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            margin-bottom: clamp(0.5rem, 2vw, 0.75rem);
-            padding-bottom: clamp(0.25rem, 1vw, 0.5rem);
+            margin-bottom: 16px;
+            padding-bottom: 12px;
             border-bottom: 1px solid var(--solution-border);
-            flex-wrap: wrap;
-            gap: 0.5rem;
         }
 
         .solution-title {
             display: flex;
             align-items: center;
             font-weight: 600;
-            font-size: clamp(0.875rem, 3vw, 1.125rem);
+            font-size: 18px;
             color: var(--primary-color);
         }
 
         .solution-title i {
-            margin-right: clamp(0.25rem, 1vw, 0.5rem);
-            font-size: clamp(0.875rem, 3vw, 1.25rem);
+            margin-right: 8px;
+            font-size: 20px;
         }
 
         .copy-button {
@@ -238,13 +228,10 @@
             color: white;
             border: none;
             border-radius: 6px;
-            padding: clamp(0.3rem, 1.5vw, 0.5rem) clamp(0.5rem, 2vw, 0.75rem);
+            padding: 6px 12px;
             cursor: pointer;
-            font-size: clamp(0.625rem, 2.5vw, 0.75rem);
+            font-size: 12px;
             transition: var(--transition);
-            display: flex;
-            align-items: center;
-            gap: 0.25rem;
         }
 
         .copy-button:hover {
@@ -253,34 +240,33 @@
 
         .solution-content {
             line-height: 1.7;
-            font-size: clamp(0.75rem, 2.5vw, 0.875rem);
-            word-break: break-word;
+            font-size: 15px;
         }
 
         .solution-content h1,
         .solution-content h2,
         .solution-content h3 {
             color: var(--primary-color);
-            margin: clamp(0.5rem, 2vw, 0.75rem) 0 clamp(0.25rem, 1vw, 0.5rem) 0;
+            margin: 16px 0 8px 0;
             font-weight: 600;
         }
 
-        .solution-content h1 { font-size: clamp(1rem, 3.5vw, 1.25rem); }
-        .solution-content h2 { font-size: clamp(0.875rem, 3vw, 1.125rem); }
-        .solution-content h3 { font-size: clamp(0.75rem, 2.5vw, 1rem); }
+        .solution-content h1 { font-size: 20px; }
+        .solution-content h2 { font-size: 18px; }
+        .solution-content h3 { font-size: 16px; }
 
         .solution-content p {
-            margin-bottom: clamp(0.5rem, 2vw, 0.75rem);
+            margin-bottom: 12px;
         }
 
         .solution-content ul,
         .solution-content ol {
-            margin: clamp(0.5rem, 2vw, 0.75rem) 0;
-            padding-left: clamp(1rem, 3vw, 1.5rem);
+            margin: 12px 0;
+            padding-left: 24px;
         }
 
         .solution-content li {
-            margin-bottom: clamp(0.25rem, 1vw, 0.375rem);
+            margin-bottom: 6px;
         }
 
         .solution-content code {
@@ -288,16 +274,16 @@
             padding: 2px 6px;
             border-radius: 4px;
             font-family: 'Courier New', monospace;
-            font-size: clamp(0.625rem, 2vw, 0.75rem);
+            font-size: 14px;
             color: #e74c3c;
         }
 
         .solution-content pre {
             background-color: var(--code-bg);
-            padding: clamp(0.5rem, 2vw, 1rem);
-            border-radius: clamp(0.25rem, 1vw, 0.5rem);
+            padding: 16px;
+            border-radius: 8px;
             overflow-x: auto;
-            margin: clamp(0.5rem, 2vw, 0.75rem) 0;
+            margin: 12px 0;
             border-left: 4px solid var(--primary-color);
         }
 
@@ -309,17 +295,17 @@
 
         .solution-content blockquote {
             border-left: 4px solid var(--primary-color);
-            padding-left: clamp(0.5rem, 2vw, 1rem);
-            margin: clamp(0.5rem, 2vw, 0.75rem) 0;
+            padding-left: 16px;
+            margin: 12px 0;
             font-style: italic;
             color: #666;
         }
 
         .solution-content .step {
             background: rgba(108, 99, 255, 0.1);
-            padding: clamp(0.5rem, 2vw, 0.75rem);
-            border-radius: clamp(0.25rem, 1vw, 0.5rem);
-            margin: clamp(0.25rem, 1vw, 0.5rem) 0;
+            padding: 12px;
+            border-radius: 8px;
+            margin: 8px 0;
             border-left: 4px solid var(--primary-color);
         }
 
@@ -329,25 +315,22 @@
         }
 
         .input-container {
-            padding: clamp(0.5rem, 2vw, 1rem);
+            padding: 16px;
             background-color: var(--bg-color);
             border-top: 1px solid rgba(0, 0, 0, 0.05);
             display: flex;
             align-items: center;
-            flex-wrap: wrap;
-            gap: clamp(0.25rem, 1vw, 0.5rem);
         }
 
         .message-input {
             flex-grow: 1;
-            padding: clamp(0.5rem, 2vw, 0.75rem) clamp(0.75rem, 2.5vw, 1rem);
+            padding: 12px 16px;
             border: 1px solid #ddd;
-            border-radius: clamp(1rem, 3vw, 1.5rem);
-            font-size: clamp(0.75rem, 2.5vw, 0.9375rem);
+            border-radius: 24px;
+            font-size: 16px;
             background-color: var(--secondary-color);
             color: var(--text-color);
             transition: var(--transition);
-            min-width: 0;
         }
 
         .message-input:focus {
@@ -361,9 +344,9 @@
             color: white;
             border: none;
             border-radius: 50%;
-            width: clamp(2rem, 6vw, 2.75rem);
-            height: clamp(2rem, 6vw, 2.75rem);
-            margin-left: clamp(0.25rem, 1vw, 0.5rem);
+            width: 44px;
+            height: 44px;
+            margin-left: 10px;
             cursor: pointer;
             display: flex;
             align-items: center;
@@ -376,18 +359,18 @@
         }
 
         .send-button i {
-            font-size: clamp(0.875rem, 2.5vw, 1rem);
+            font-size: 18px;
         }
 
         .empty-state {
             text-align: center;
-            padding: clamp(1rem, 5vw, 2rem) clamp(0.5rem, 2vw, 1rem);
+            padding: 40px 20px;
             color: #888;
         }
 
         .empty-state i {
-            font-size: clamp(1.5rem, 6vw, 2.5rem);
-            margin-bottom: clamp(0.5rem, 2vw, 1rem);
+            font-size: 48px;
+            margin-bottom: 16px;
             color: var(--primary-color);
         }
 
@@ -406,91 +389,46 @@
             font-weight: 500;
         }
 
-        /* Responsive Adjustments */
-        @media (max-width: 1024px) {
-            .container {
-                max-width: 98%;
-                padding: clamp(0.25rem, 1.5vw, 0.5rem);
-            }
-            .chat-messages {
-                max-height: calc(100vh - 180px);
-            }
-            .message {
-                max-width: 92%;
-            }
+        /* Flash message styles */
+        .flash-messages {
+            margin-bottom: 20px;
+        }
+
+        .flash-message {
+            padding: 10px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        .flash-message.success {
+            background-color: rgba(46, 204, 113, 0.1);
+            color: #2ecc71;
+            border: 1px solid #2ecc71;
+        }
+
+        .flash-message.error {
+            background-color: rgba(231, 76, 60, 0.1);
+            color: #e74c3c;
+            border: 1px solid #e74c3c;
+        }
+
+        .flash-message.info {
+            background-color: rgba(52, 152, 219, 0.1);
+            color: #3498db;
+            border: 1px solid #3498db;
         }
 
         @media (max-width: 768px) {
             .container {
-                padding: clamp(0.25rem, 1vw, 0.5rem);
+                padding: 10px;
+            }
+            .message {
+                max-width: 90%;
             }
             .header-controls {
                 flex-direction: column;
-                align-items: flex-end;
-            }
-            .chat-messages {
-                max-height: calc(100vh - 200px);
-            }
-            .message {
-                max-width: 95%;
-            }
-            .message-bubble {
-                padding: clamp(0.4rem, 1.5vw, 0.6rem) clamp(0.6rem, 2vw, 0.8rem);
-                font-size: clamp(0.7rem, 2vw, 0.875rem);
-            }
-            .solution-container {
-                padding: clamp(0.4rem, 1.5vw, 0.75rem);
-            }
-            .input-container {
-                padding: clamp(0.4rem, 1.5vw, 0.75rem);
-            }
-            .message-input {
-                padding: clamp(0.4rem, 1.5vw, 0.6rem) clamp(0.6rem, 2vw, 0.8rem);
-                font-size: clamp(0.7rem, 2vw, 0.875rem);
-            }
-            .send-button {
-                width: clamp(1.75rem, 5vw, 2.25rem);
-                height: clamp(1.75rem, 5vw, 2.25rem);
-            }
-        }
-
-        @media (max-width: 480px) {
-            .container {
-                padding: clamp(0.125rem, 1vw, 0.25rem);
-            }
-            .header-controls {
-                flex-direction: row;
-                justify-content: flex-end;
-                gap: clamp(0.125rem, 0.5vw, 0.25rem);
-            }
-            .clear-history-btn, .copy-button {
-                padding: clamp(0.25rem, 1vw, 0.4rem) clamp(0.4rem, 1.5vw, 0.6rem);
-                font-size: clamp(0.6rem, 2vw, 0.7rem);
-            }
-            .theme-toggle {
-                width: clamp(1.75rem, 5vw, 2rem);
-                height: clamp(1.75rem, 5vw, 2rem);
-            }
-            .chat-messages {
-                max-height: calc(100vh - 220px);
-            }
-            .message-bubble {
-                font-size: clamp(0.625rem, 1.8vw, 0.75rem);
-            }
-            .solution-content h1 { font-size: clamp(0.875rem, 3vw, 1rem); }
-            .solution-content h2 { font-size: clamp(0.75rem, 2.5vw, 0.875rem); }
-            .solution-content h3 { font-size: clamp(0.625rem, 2vw, 0.75rem); }
-            .solution-content {
-                font-size: clamp(0.625rem, 2vw, 0.75rem);
-            }
-            .solution-title {
-                font-size: clamp(0.75rem, 2.5vw, 0.875rem);
-            }
-            .message-input {
-                font-size: clamp(0.625rem, 2vw, 0.75rem);
-            }
-            .send-button i {
-                font-size: clamp(0.75rem, 2vw, 0.875rem);
+                gap: 5px;
             }
         }
     </style>
@@ -515,6 +453,17 @@
         </header>
 
         <div class="chat-container">
+            <!-- Flash messages -->
+            {% with messages = get_flashed_messages(with_categories=true) %}
+              {% if messages %}
+                <div class="flash-messages">
+                  {% for category, message in messages %}
+                    <div class="flash-message {{ category }}">{{ message }}</div>
+                  {% endfor %}
+                </div>
+              {% endif %}
+            {% endwith %}
+
             <div class="chat-messages" id="chatMessages">
                 {% if not chat_history %}
                 <div class="empty-state">
@@ -559,44 +508,6 @@
                         {% endif %}
                     </div>
                     {% endfor %}
-                {% endif %}
-                
-                <!-- Current conversation (if any) -->
-                {% if user_input and response %}
-                <div class="conversation-group">
-                    <div class="message user">
-                        <div class="message-info">You</div>
-                        <div class="message-bubble">{{ user_input }}</div>
-                    </div>
-                    
-                    <div class="message ai">
-                        <div class="message-info">Gemini AI</div>
-                        <div class="message-bubble {% if 'Error' in response %}error{% endif %}">
-                            {% if 'Error' in response %}
-                                {{ response }}
-                            {% else %}
-                                I've prepared a detailed solution for you. Please check the solution section below.
-                            {% endif %}
-                            </div>
-                    </div>
-                    
-                    {% if 'Error' not in response %}
-                    <div class="solution-container">
-                        <div class="solution-header">
-                            <div class="solution-title">
-                                <i class="fas fa-lightbulb"></i>
-                                Detailed Solution
-                            </div>
-                            <button class="copy-button" onclick="copySolution(this)">
-                                <i class="fas fa-copy"></i> Copy
-                            </button>
-                        </div>
-                        <div class="solution-content" id="solutionContent">
-                            {{ response|safe }}
-                        </div>
-                    </div>
-                    {% endif %}
-                </div>
                 {% endif %}
             </div>
 
