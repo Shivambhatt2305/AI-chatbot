@@ -44,7 +44,7 @@ google-api-core==2.25.0
 google-api-python-client==2.171.0
 google-auth==2.40.0
 google-auth-httplib2==0.2.0
-google-generativeai==0.2.0
+google-generativeai==0.8.2
 google-pasta==0.2.0
 googleapis-common-protos==1.70.0
 grpcio==1.73.0
@@ -152,6 +152,7 @@ wcwidth==0.2.13
 weasel==0.4.1
 Werkzeug==3.0.4
 wheel==0.45.1
+wrap Ari==0.4
 wrapt==1.16.0
 xgboost==2.1.2
 xyzservices==2024.9.0
