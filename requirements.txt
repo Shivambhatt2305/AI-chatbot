@@ -1,7 +1,9 @@
-grpcio==1.73.0
-grpcio-status==1.71.0
-gTTS==2.5.4
-gunicorn==23.0.0
-h11==0.16.0
-httpcore==1.0.9
-httplib2==0.22.0
+Flask==3.0.3              # Web framework
+Flask-Cors==5.0.0         # CORS support for Flask
+google-generativeai==0.8.5 # Gemini API client
+gTTS==2.5.4               # Google Text-to-Speech
+librosa==0.11.0           # Audio processing
+soundfile==0.13.1         # Audio file handling
+requests==2.32.3          # HTTP requests for APIs
+numpy==2.0.2              # Numerical operations for librosa
+gunicorn==23.0.0          # WSGI server for deployment
