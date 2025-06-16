@@ -1,9 +1,91 @@
-Flask==3.0.3              # Web framework
-Flask-Cors==5.0.0         # CORS support for Flask
-google-generativeai==0.8.5 # Gemini API client
-gTTS==2.5.4               # Google Text-to-Speech
-librosa==0.11.0           # Audio processing
-soundfile==0.13.1         # Audio file handling
-requests==2.32.3          # HTTP requests for APIs
-numpy==2.0.2              # Numerical operations for librosa
-gunicorn==23.0.0          # WSGI server for deployment
+acres==0.5.0
+annotated-types==0.7.0
+anyio==4.9.0
+beautifulsoup4==4.13.3
+blinker==1.9.0
+cachetools==5.5.2
+certifi==2025.1.31
+charset-normalizer==3.4.1
+ci-info==0.3.0
+click==8.1.8
+colorama==0.4.6
+configobj==5.0.9
+configparser==7.2.0
+contourpy==1.3.1
+cycler==0.12.1
+distro==1.9.0
+docutils==0.21.2
+et_xmlfile==2.0.0
+etelemetry==0.3.1
+filelock==3.18.0
+fitz==0.0.1.dev2
+Flask==3.1.1
+flask-cors==6.0.0
+fonttools==4.56.0
+google-ai-generativelanguage==0.6.15
+google-api-core==2.25.0
+google-api-python-client==2.171.0
+google-auth==2.40.3
+google-auth-httplib2==0.2.0
+google-generativeai==0.8.5
+googleapis-common-protos==1.70.0
+grpcio==1.73.0
+grpcio-status==1.71.0
+gTTS==2.5.4
+gunicorn==23.0.0
+h11==0.16.0
+httpcore==1.0.9
+httplib2==0.22.0
+httpx==0.28.1
+idna==3.10
+itsdangerous==2.2.0
+Jinja2==3.1.6
+jiter==0.10.0
+kiwisolver==1.4.8
+looseversion==1.3.0
+lxml==5.3.1
+Markdown==3.8
+MarkupSafe==3.0.2
+matplotlib==3.10.1
+networkx==3.5
+nibabel==5.3.2
+nipype==1.10.0
+numpy==2.2.4
+openai==1.85.0
+openpyxl==3.1.5
+packaging==24.2
+pandas==2.2.3
+pathlib==1.0.1
+pillow==11.1.0
+proto-plus==1.26.1
+protobuf==5.29.5
+prov==2.0.2
+puremagic==1.29
+pyasn1==0.6.1
+pyasn1_modules==0.4.2
+pydantic==2.11.5
+pydantic_core==2.33.2
+pydot==4.0.0
+PyMuPDF==1.26.0
+pyparsing==3.2.3
+python-dateutil==2.9.0.post0
+pytz==2025.2
+pyxnat==1.6.3
+rdflib==7.1.4
+requests==2.32.3
+rsa==4.9.1
+scipy==1.15.2
+seaborn==0.13.2
+simplejson==3.20.1
+six==1.17.0
+sniffio==1.3.1
+soupsieve==2.6
+statistics==1.0.3.5
+tqdm==4.67.1
+traits==7.0.2
+typing-inspection==0.4.1
+typing_extensions==4.13.0
+tzdata==2025.2
+uritemplate==4.2.0
+urllib3==2.3.0
+Werkzeug==3.1.3
