@@ -8,6 +8,10 @@ from werkzeug.security import generate_password_hash, check_password_hash
 import secrets
 from functools import wraps
 from datetime import timedelta
+from urllib.parse import urlparse
+
+
+
 
 # Initialize Flask app
 app = Flask(__name__, template_folder='templates', static_folder='static')
@@ -18,15 +22,28 @@ app.permanent_session_lifetime = timedelta(days=1)  # Session expires after 1 da
 API_KEY = os.environ.get('GEMINI_API_KEY', "AIzaSyChFYnEka9jiBTHdTMK2jLH75X7K55ot4I")
 os.environ['GOOGLE_API_KEY'] = API_KEY
 genai.configure(api_key=API_KEY)
-
+# Get database URL from Render environment
+DATABASE_URL = os.environ.get('postgresql://chatbot_db_vz6l_user:E2uIsCwRk17psuZyVWs8oyO16Ed9VGQo@dpg-d18063p5pdvs738t4ac0-a.oregon-postgres.render.com/chatbot_db_vz6l')
 # Database configuration
-DB_CONFIG = {
-    'host': os.environ.get('DB_HOST', 'localhost'),
-    'database': os.environ.get('DB_NAME', 'chatbot_db'),
-    'user': os.environ.get('DB_USER', 'postgres'),
-    'password': os.environ.get('DB_PASSWORD', '122405'),
-    'port': os.environ.get('DB_PORT', '1369')
-}
+if DATABASE_URL:
+    # Parse the URL (for SQLAlchemy compatibility)
+    db_url = urlparse(DATABASE_URL)
+    DB_CONFIG = {
+        'host': db_url.hostname,
+        'database': db_url.path[1:],  # Remove leading '/'
+        'user': db_url.username,
+        'password': db_url.password,
+        'port': db_url.port,
+    }
+else:
+    # Fallback to local development config
+    DB_CONFIG = {
+        'host': 'localhost',
+        'database': 'chatbot_db',
+        'user': 'postgres',
+        'password': '122405',
+        'port': '1369',
+    }
 
 # Initialize model
 model = None
