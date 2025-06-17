@@ -8,3 +8,6 @@ requests==2.32.3          # HTTP requests for APIs
 numpy==2.0.2              # Numerical operations for librosa
 gunicorn==23.0.0          # WSGI server for deployment
 flask_session==0.5.0
+markdown>=3.0
+bleach>=6.0
+markupsafe>=2.1.0
