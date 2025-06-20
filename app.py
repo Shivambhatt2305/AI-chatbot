@@ -26,115 +26,115 @@ os.environ['GOOGLE_API_KEY'] = API_KEY
 genai.configure(api_key=API_KEY)
 
 # Database configuration - UPDATE THESE WITH YOUR SETTINGS
-DB_CONFIG = {
-    'host': 'localhost',
-    'database': 'chatbot_db',
-    'user': 'chatbot_user',
-    'password': '122405',
-    'port': '1369'
-}
+# DB_CONFIG = {
+#     'host': 'localhost',
+#     'database': 'chatbot_db',
+#     'user': 'chatbot_user',
+#     'password': '122405',
+#     'port': '1369'
+# }
 
-# Initialize model
-try:
-    model = genai.GenerativeModel(
-        'gemini-1.5-flash',
-        system_instruction="""You are a helpful AI assistant. You maintain context from previous messages in the conversation. 
-        When users ask follow-up questions like "explain in detail", "give me more info", "elaborate", etc., 
-        refer back to the previous topics discussed in the conversation."""
-    )
-    print("Gemini model initialized successfully")
-except Exception as e:
-    print(f"Error initializing model: {str(e)}")
-    model = None
+# # Initialize model
+# try:
+#     model = genai.GenerativeModel(
+#         'gemini-1.5-flash',
+#         system_instruction="""You are a helpful AI assistant. You maintain context from previous messages in the conversation. 
+#         When users ask follow-up questions like "explain in detail", "give me more info", "elaborate", etc., 
+#         refer back to the previous topics discussed in the conversation."""
+#     )
+#     print("Gemini model initialized successfully")
+# except Exception as e:
+#     print(f"Error initializing model: {str(e)}")
+#     model = None
 
-# Database connection function
-def get_db_connection():
-    try:
-        conn = psycopg2.connect(**DB_CONFIG, cursor_factory=RealDictCursor)
-        return conn
-    except Exception as e:
-        print(f"Database connection error: {str(e)}")
-        return None
+# # Database connection function
+# def get_db_connection():
+#     try:
+#         conn = psycopg2.connect(**DB_CONFIG, cursor_factory=RealDictCursor)
+#         return conn
+#     except Exception as e:
+#         print(f"Database connection error: {str(e)}")
+#         return None
 
-# Test database connection
-def test_db_connection():
-    conn = get_db_connection()
-    if conn:
-        try:
-            with conn.cursor() as cur:
-                cur.execute('SELECT version();')
-                version = cur.fetchone()
-                print(f"Database connected successfully: {version['version']}")
-                return True
-        except Exception as e:
-            print(f"Database test error: {str(e)}")
-            return False
-        finally:
-            conn.close()
-    return False
+# # Test database connection
+# def test_db_connection():
+#     conn = get_db_connection()
+#     if conn:
+#         try:
+#             with conn.cursor() as cur:
+#                 cur.execute('SELECT version();')
+#                 version = cur.fetchone()
+#                 print(f"Database connected successfully: {version['version']}")
+#                 return True
+#         except Exception as e:
+#             print(f"Database test error: {str(e)}")
+#             return False
+#         finally:
+#             conn.close()
+#     return False
 
-# Initialize database tables
-def init_db():
-    conn = get_db_connection()
-    if conn:
-        try:
-            with conn.cursor() as cur:
-                # Create users table
-                cur.execute('''
-                    CREATE TABLE IF NOT EXISTS users (
-                        id SERIAL PRIMARY KEY,
-                        username VARCHAR(100) UNIQUE NOT NULL,
-                        password VARCHAR(255) NOT NULL,
-                        email VARCHAR(255),
-                        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-                    )
-                ''')
+# # Initialize database tables
+# def init_db():
+#     conn = get_db_connection()
+#     if conn:
+#         try:
+#             with conn.cursor() as cur:
+#                 # Create users table
+#                 cur.execute('''
+#                     CREATE TABLE IF NOT EXISTS users (
+#                         id SERIAL PRIMARY KEY,
+#                         username VARCHAR(100) UNIQUE NOT NULL,
+#                         password VARCHAR(255) NOT NULL,
+#                         email VARCHAR(255),
+#                         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+#                     )
+#                 ''')
                 
-                # Create chat_sessions table
-                cur.execute('''
-                    CREATE TABLE IF NOT EXISTS chat_sessions (
-                        id SERIAL PRIMARY KEY,
-                        user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
-                        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-                    )
-                ''')
+#                 # Create chat_sessions table
+#                 cur.execute('''
+#                     CREATE TABLE IF NOT EXISTS chat_sessions (
+#                         id SERIAL PRIMARY KEY,
+#                         user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
+#                         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+#                     )
+#                 ''')
                 
-                # Create chat_messages table
-                cur.execute('''
-                    CREATE TABLE IF NOT EXISTS chat_messages (
-                        id SERIAL PRIMARY KEY,
-                        session_id INTEGER REFERENCES chat_sessions(id) ON DELETE CASCADE,
-                        user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
-                        message TEXT NOT NULL,
-                        response TEXT NOT NULL,
-                        timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-                    )
-                ''')
+#                 # Create chat_messages table
+#                 cur.execute('''
+#                     CREATE TABLE IF NOT EXISTS chat_messages (
+#                         id SERIAL PRIMARY KEY,
+#                         session_id INTEGER REFERENCES chat_sessions(id) ON DELETE CASCADE,
+#                         user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
+#                         message TEXT NOT NULL,
+#                         response TEXT NOT NULL,
+#                         timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+#                     )
+#                 ''')
                 
-                # Create indexes for better performance
-                cur.execute('CREATE INDEX IF NOT EXISTS idx_chat_messages_user_id ON chat_messages(user_id)')
-                cur.execute('CREATE INDEX IF NOT EXISTS idx_chat_messages_session_id ON chat_messages(session_id)')
-                cur.execute('CREATE INDEX IF NOT EXISTS idx_chat_sessions_user_id ON chat_sessions(user_id)')
+#                 # Create indexes for better performance
+#                 cur.execute('CREATE INDEX IF NOT EXISTS idx_chat_messages_user_id ON chat_messages(user_id)')
+#                 cur.execute('CREATE INDEX IF NOT EXISTS idx_chat_messages_session_id ON chat_messages(session_id)')
+#                 cur.execute('CREATE INDEX IF NOT EXISTS idx_chat_sessions_user_id ON chat_sessions(user_id)')
                 
-                conn.commit()
-                print("Database tables initialized successfully")
-                return True
-        except Exception as e:
-            print(f"Error initializing database: {str(e)}")
-            conn.rollback()
-            return False
-        finally:
-            conn.close()
-    return False
+#                 conn.commit()
+#                 print("Database tables initialized successfully")
+#                 return True
+#         except Exception as e:
+#             print(f"Error initializing database: {str(e)}")
+#             conn.rollback()
+#             return False
+#         finally:
+#             conn.close()
+#     return False
 
-# Login required decorator
-def login_required(f):
-    @wraps(f)
-    def decorated_function(*args, **kwargs):
-        if 'user_id' not in session:
-            return redirect(url_for('login', next=request.url))
-        return f(*args, **kwargs)
-    return decorated_function
+# # Login required decorator
+# def login_required(f):
+#     @wraps(f)
+#     def decorated_function(*args, **kwargs):
+#         if 'user_id' not in session:
+#             return redirect(url_for('login', next=request.url))
+#         return f(*args, **kwargs)
+#     return decorated_function
 
 # Routes
 @app.route('/', methods=['GET'])
